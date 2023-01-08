@@ -1,3 +1,4 @@
+<!--
 <form action="/users" method="post" accept-charset="UTF-8">
   <div>
     <label for="user[username]">Username: </label>
@@ -13,3 +14,22 @@
   </div>
   <div><button type="submit">Submit</button></div>
 </form>
+-->
+
+<%= form_tag( '/users' , method: :post) do |f| %>
+  <div>
+    <%= label_tag :username, "Username:" %>
+    <%= text_field_tag :username %>
+  </div>
+  <div>
+    <%= label_tag :email, "Email:" %>
+    <%= email_field_tag (:email) %>
+  </div>
+  <div>
+    <%= label_tag :passowrd, "Password" %>
+    <%= password_field_tag :password %>
+  </div>
+  <div>
+    <%= button_tag "Submit" %>
+  </div>
+<% end %>
