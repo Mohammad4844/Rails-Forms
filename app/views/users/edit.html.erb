@@ -1,0 +1,20 @@
+<%= form_with model: @user do |f| %>
+  <% if @user.errors.any? %>
+    <div style="color:red"> <%= @user.errors.full_messages %></div>
+  <% end %>
+  <div>
+    <%= f.label :username, "Enter ur username" %>
+    <%= f.text_field :username %>
+  </div>
+  <div>
+    <%= f.label :email, "Enter ur email" %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :password, "Enter ur pass" %>
+    <%= f.password_field :password%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
